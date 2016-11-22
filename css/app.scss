@@ -1,0 +1,360 @@
+@import "mixins/mixins";
+//@import "iconfont";
+
+$color-danger: #ff423f;
+$color-success: #80d049;
+$color-warning: #fc9b30;
+$color-info: #2f6ae2;
+$color-primary: #00e4c2;
+$color-normal: #141414;
+$color-light: #465866;
+$color-lighter: #939393;
+$color-border: #e5e5e5;
+$color-purple: #6f68be;
+
+$fz-xs: .20rem;
+$fz-sm: .24rem;
+$fz-normal: .28rem;
+$fz-big: .32rem;
+$fz-larger: .36rem;
+$space-xs: .1rem;
+$space-sm: .2rem;
+$space-normal: .3rem;
+$space-big: .4rem;
+$space-larger: .5rem;
+
+* {
+  @include box-sizing(border-box);
+  //-webkit-user-select: none; /* Chrome all / Safari all */
+  //-moz-user-select: none; /* Firefox all  */
+  //-ms-user-select: none; /* IE 10+ */
+}
+
+html {
+  height: 100%;
+  font-size: 50px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-size: 16px;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a, button, input, textarea, label {
+  -webkit-appearance: none;
+}
+
+img {
+  -webkit-touch-callout: none;
+}
+
+.ul, .ol {
+  list-style: none;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.screen-lock {
+  overflow: hidden;
+}
+
+.m {
+  margin: $space-sm !important;
+}
+
+.m-tb {
+  margin-top: $space-sm !important;
+  margin-bottom: $space-sm !important;
+}
+
+.m-t {
+  margin-top: $space-sm !important;
+}
+
+.m-b {
+  margin-bottom: $space-sm !important;
+}
+
+.text-default {
+  color: $color-normal;
+}
+
+.text-danger {
+  color: $color-danger;
+}
+
+.text-success {
+  color: $color-success;
+}
+
+.text-warning {
+  color: $color-warning;
+}
+
+.container {
+  //padding-bottom: 1rem;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.p-b-normal {
+  padding-bottom: 0;
+}
+
+.swiper-slide {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.swiper-pagination {
+  bottom: .2rem !important;
+  padding-right: .4rem;
+  text-align: right;
+  .swiper-pagination-bullet {
+    @include opacity(1);
+    background-color: transparent;
+    border: 1px solid #fff;
+    margin: 0 .06rem !important;
+    &.swiper-pagination-bullet-active {
+      background-color: $color-danger;
+      border-color: $color-danger;
+    }
+  }
+}
+
+.fix-nav-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 0 $space-normal;
+  z-index: 10;
+  background-color: #ffffff;
+  height: 1.04rem;
+  @include box-shadow(0 0 5px rgba(51, 51, 51, 0.2));
+  @include clearfix();
+  & + .container {
+    padding-top: 1.04rem;
+  }
+  .logo-box {
+    float: left;
+    padding-top: .24rem;
+    .logo {
+      width: 2rem;
+      height: .54rem;
+      display: block;
+      background: #fff url(../images/logo.png) 0 0 no-repeat;
+      @include background-size(2rem);
+    }
+  }
+  .nav-r {
+    float: right;
+    height: 1.04rem;
+    @include flexbox();
+    @include align-items(center);
+  }
+  .nav-btn {
+    display: block;
+    margin-right: .3rem;
+    background-color: #d8603e;
+    font-size: $fz-sm;
+    color: #ffffff;
+    padding: $space-xs $space-normal;
+    @include border-radius(3px);
+    &:active {
+      background-color: darken(#d8603e, 10);
+    }
+  }
+  .nav-menu {
+    display: block;
+    margin-top: -.08rem;
+    text-align: center;
+    line-height: 1;
+    color: #433d3f;
+    i {
+      font-size: .6rem;
+    }
+  }
+}
+
+.block-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: center no-repeat;
+  @include background-size(cover);
+}
+
+.index-a {
+  @include clearfix();
+  .index-a-l {
+    width: 2.5rem;
+    height: 4.86rem;
+    float: left;
+  }
+  .index-a-r {
+    list-style: none;
+    float: left;
+    width: 5rem;
+    height: 4.86rem;
+    li {
+      float: left;
+      width: 2.5rem;
+      height: 2.43rem;
+    }
+  }
+}
+
+.index-b {
+  @include flexbox();
+  .index-b-l {
+    height: 1.61rem;
+    @include flex(1);
+  }
+  .index-b-r {
+    width: 1.61rem;
+    height: 1.61rem;
+  }
+}
+
+.index-c {
+  list-style: none;
+  @include flexbox();
+  li {
+    @include flex(1);
+    height: 2.5rem;
+  }
+}
+
+.index-d {
+  @include flexbox();
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  padding: $space-xs;
+  .d-item {
+    width: 3.6rem;
+  }
+  .img-box {
+    width: 3.6rem;
+    height: 3.25rem;
+  }
+  dl {
+    padding: 0 $space-sm;
+    min-height: 1rem;
+    margin-bottom: $space-xs;
+    dt {
+      margin-top: $space-xs;
+      font-size: $fz-sm;
+      line-height: .3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    dd {
+      font-size: $fz-xs;
+      color: $color-light;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.pagination {
+  margin: $space-normal $space-xs;
+  text-align: center;
+  ul {
+    display: inline;
+    list-style: none;
+    li {
+      display: inline;
+      a {
+        display: inline-block;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        line-height: 1;
+        font-size: $fz-xs;
+        @include border-radius(2px);
+        padding: $space-xs $space-sm;
+        color: $color-light;
+      }
+    }
+  }
+}
+
+.nav-bar {
+  background-color: #465866;
+  ul {
+    list-style: none;
+    @include flexbox();
+    @include align-items(center);
+    li {
+      @include flex(1);
+      a {
+        display: block;
+        padding: $space-xs $space-normal;
+        text-align: center;
+        color: #ffffff;
+        i {
+          font-size: .5rem;
+          line-height: 1;
+        }
+        span {
+          display: block;
+          line-height: 1;
+          font-size: $fz-sm;
+        }
+      }
+    }
+  }
+}
+
+.sub-bar {
+  list-style: none;
+  @include flexbox();
+  @include align-items(center);
+  li {
+    @include flex(1);
+    text-align: center;
+    padding: $space-xs;
+    a{
+      font-size: $fz-normal;
+      color: $color-light;
+    }
+  }
+}
+.sub-nav {
+  border-top: 1px solid $color-border;
+  list-style: none;
+  @include flexbox();
+  @include align-items(center);
+  li {
+    @include flex(1);
+    text-align: center;
+    padding: $space-sm;
+    a{
+      font-size: $fz-xs;
+      color: $color-light;
+    }
+  }
+}

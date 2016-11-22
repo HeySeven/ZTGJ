@@ -1,0 +1,28 @@
+﻿@import "../../../base/fn";
+
+// method2 accessbility
+.weui_cells_radio{
+    .weui_cell_ft {
+        padding-left: $weuiCellInnerGapH;
+    }
+    .weui_cell {
+        &:active {
+            background-color: #ECECEC;
+        }
+    }
+}
+.weui_check {
+    // radio
+    .weui_cells_radio & {
+        &:checked {
+            & + .weui_icon_checked {
+                &:before {
+                    display: block;
+                    content: '\EA08';
+                    color: #ff423f;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

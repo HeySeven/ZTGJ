@@ -1,0 +1,34 @@
+﻿@import "../../base/fn";
+
+.weui_cells_access {
+    .weui_cell:not(.no_access) {
+        // 在cell_access和其它类型的cell混着用的场景下，其它cell要加no_access，避免有点击态
+        @include setTapColor();
+        &:active {
+            background-color: #ECECEC;
+        }
+    }
+    a.weui_cell {
+        color: inherit;
+    }
+    .weui_cell_ft {
+        &:after {
+            content: " ";
+            @include setArrow_Wap(right, 10px, #C8C8CD, 1px);
+            top: 0;
+            margin-left:.3em;
+        }
+    }
+}
+
+a.weui_cell{
+  color: inherit;
+  .weui_cell_ft {
+    &:after {
+      content: " ";
+      @include setArrow_Wap(right, 10px, #C8C8CD, 1px);
+      top: 0;
+      margin-left:.3em;
+    }
+  }
+}
