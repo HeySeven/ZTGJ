@@ -12,6 +12,7 @@
             self.initAddBtn();
             self.initCommentBtn();
             self.getQueryString();
+            self.toggleNav();
         },
         /**
          * initSwiper
@@ -104,6 +105,19 @@
                 }
             }
             return theRequest;
+        },
+        toggleNav: function () {
+            var $fixSubNav = $('.fix-sub-nav');
+            $(document).on('click', '[data-toggle="toggle-nav"],.fix-sub-nav li', function () {
+                if ($fixSubNav.hasClass('open')) {
+                    $fixSubNav.removeClass('open');
+                    $('html').removeClass('screen-lock');
+                } else {
+                    $fixSubNav.addClass('open');
+                    $('html').addClass('screen-lock');
+                }
+            });
+
         }
 
     };

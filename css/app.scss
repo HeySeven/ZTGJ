@@ -241,15 +241,13 @@ img {
 }
 
 .index-a {
-  @include clearfix();
+  @include flexbox();
   .index-a-l {
-    width: 2.5rem;
+    @include flex(1);
     height: 4.86rem;
-    float: left;
   }
   .index-a-r {
     list-style: none;
-    float: left;
     width: 5rem;
     height: 4.86rem;
     li {
@@ -859,3 +857,50 @@ img {
     }
   }
 }
+
+.fix-sub-nav{
+  position: absolute;
+  width: 60%;
+  right: 0;
+  top: 1.04rem;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  @include transform(translateY(10px));
+  @include transition(all 0.3s ease);
+  @include opacity(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  pointer-events: none;
+  &.open{
+    @include opacity(1);
+    @include transform(translateY(0));
+    pointer-events: auto;
+  }
+  li{
+    &.active{
+      a{
+        background-color: #efefef;
+      }
+    }
+    a{
+      display: block;
+      padding: $space-sm $space-normal;
+      color: $color-normal;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #d0d0d0;
+      &:active{
+        background-color: #efefef;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
