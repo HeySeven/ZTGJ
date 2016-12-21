@@ -753,6 +753,7 @@ img {
       font-size: 0.32rem;
       line-height: 1.2; }
     .article-b .weui_panel .weui_media_box .weui_media_desc {
+      font-size: 0.24rem;
       white-space: normal;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: initial; }
