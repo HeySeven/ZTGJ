@@ -654,6 +654,8 @@ img {
   padding-top: .4rem;
   text-align: center;
   color: #ffffff; }
+  .login-dis input[type="checkbox"] {
+    -webkit-appearance: checkbox; }
   .login-dis span {
     vertical-align: middle;
     margin: 0 .15rem; }
@@ -738,6 +740,22 @@ img {
     border-bottom: 3px solid #01acf6;
     background-color: transparent;
     color: #01acf6; }
+.article-b .weui_panel {
+  background-color: transparent; }
+  .article-b .weui_panel .weui_media_box {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start; }
+    .article-b .weui_panel .weui_media_box .weui_media_title {
+      white-space: normal;
+      font-size: 0.32rem;
+      line-height: 1.2; }
+    .article-b .weui_panel .weui_media_box .weui_media_desc {
+      white-space: normal;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: initial; }
 
 .tab-inner {
   padding: 0.85rem 0.2rem 0; }
@@ -1004,5 +1022,39 @@ img {
     border-bottom: 1px solid #d0d0d0; }
     .fix-sub-nav li a:active {
       background-color: #efefef; }
+
+.register-form {
+  margin: .25rem auto;
+  width: 5.99rem; }
+  .register-form .weui_cells {
+    background-color: transparent;
+    -webkit-border-radius: 0.08rem;
+    -moz-border-radius: 0.08rem;
+    border-radius: 0.08rem;
+    overflow: hidden; }
+    .register-form .weui_cells:before, .register-form .weui_cells:after {
+      display: none; }
+    .register-form .weui_cells .weui_cell {
+      padding: .18rem .35rem;
+      background-color: rgba(255, 255, 255, 0.34);
+      color: #ffffff;
+      border: 0;
+      font-size: .36rem; }
+      .register-form .weui_cells .weui_cell:before {
+        left: 0; }
+      .register-form .weui_cells .weui_cell .weui_input::-webkit-input-placeholder {
+        color: #ffffff; }
+      .register-form .weui_cells .weui_cell .weui_input:-moz-placeholder {
+        /* Firefox 18- */
+        color: #ffffff; }
+      .register-form .weui_cells .weui_cell .weui_input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #ffffff; }
+      .register-form .weui_cells .weui_cell .weui_input:-ms-input-placeholder {
+        color: #ffffff; }
+      .register-form .weui_cells .weui_cell.weui_cell_select {
+        padding: 0; }
+        .register-form .weui_cells .weui_cell.weui_cell_select .weui_select {
+          color: #ffffff; }
 
 /*# sourceMappingURL=app.css.map */
