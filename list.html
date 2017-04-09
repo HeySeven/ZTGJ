@@ -33,10 +33,10 @@
 <div class="fixed-tab-bar">
     <ul class="tab-bar">
         <li>
-            全部分类 <i class="iconfont icon-unfold"></i>
+            <span id="category">全部分类</span> <i class="iconfont icon-unfold"></i>
         </li>
         <li>
-            智能排序 <i class="iconfont icon-unfold"></i>
+            <span id="sort">智能排序</span> <i class="iconfont icon-unfold"></i>
         </li>
     </ul>
 </div>
@@ -178,17 +178,24 @@
 <script src="js/app.min.js"></script>
 <script>
     var $modalWrap = $('.modal-wrap');
-    $('.tab-bar li').click(function(){
+    $('.tab-bar li').click(function () {
         $modalWrap.fadeIn();
         $('.modal-list').eq($(this).index()).show().siblings().hide();
     });
-    $('.modal-list li').click(function(){
+    $('.modal-list li').click(function () {
+        var modalIndex = $(this).parent('.modal-list').index();
+        var selectText = $(this).text();
         $(this).addClass('active').siblings().removeClass('active');
+        if (modalIndex == 0) {
+            $('#category').text(selectText);
+        } else if (modalIndex == 1) {
+            $('#sort').text(selectText);
+        }
     });
-    $modalWrap.click(function(){
+    $modalWrap.click(function () {
         hideWrap();
     });
-    function hideWrap(){
+    function hideWrap() {
         $modalWrap.hide();
     }
 </script>
