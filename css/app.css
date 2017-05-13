@@ -159,6 +159,9 @@ img {
   .weui-picker-modal .picker-modal-inner {
     height: 4.32rem; }
 
+.weui-select-modal .weui_cells {
+  max-height: 4.32rem; }
+
 .toolbar {
   font-size: .32rem; }
   .toolbar .toolbar-inner {
@@ -903,6 +906,8 @@ img {
   left: 0;
   right: 0;
   z-index: 9; }
+  .fixed-search input {
+    display: none; }
 
 .fixed-tab-bar {
   position: fixed;
@@ -943,15 +948,19 @@ img {
 .list-panel .weui_media_box.weui_media_appmsg {
   padding: 0.2rem; }
   .list-panel .weui_media_box.weui_media_appmsg .weui_media_hd {
-    width: 1.2rem;
-    height: .8rem;
-    line-height: .8rem;
+    width: 2.4rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; }
   .list-panel .weui_media_box.weui_media_appmsg .weui_media_title {
-    font-size: 0.28rem; }
+    font-size: .3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal; }
   .list-panel .weui_media_box.weui_media_appmsg .weui_media_desc {
     padding-top: 0.1rem;
     font-size: 0.24rem; }
@@ -974,10 +983,16 @@ img {
 
 .modal-list {
   display: none;
-  background-color: #fff; }
+  background-color: #fff;
+  max-height: 6rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
   .modal-list li {
     padding: 0.2rem;
-    font-size: 0.24rem; }
+    font-size: 0.24rem;
+    color: #2b2b2b; }
+    .modal-list li a {
+      color: #2b2b2b; }
     .modal-list li.active {
       background: #efefef; }
 
@@ -1057,5 +1072,22 @@ img {
         padding: 0; }
         .register-form .weui_cells .weui_cell.weui_cell_select .weui_select {
           color: #ffffff; }
+
+.art-control {
+  padding: 0 .6rem .3rem; }
+  .art-control .btn {
+    display: inline-block;
+    background-color: #d8603e;
+    font-size: 0.36rem;
+    font-weight: normal;
+    color: #ffffff;
+    padding: 0.1rem 0.5rem;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
+  .art-control .pull-right {
+    margin-top: .1rem; }
+    .art-control .pull-right i {
+      margin-right: .2rem; }
 
 /*# sourceMappingURL=app.css.map */

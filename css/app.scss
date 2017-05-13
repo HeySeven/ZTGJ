@@ -63,7 +63,9 @@ img {
     height: 4.32rem;
   }
 }
-
+.weui-select-modal .weui_cells{
+  max-height: 4.32rem;
+}
 .toolbar {
   font-size: .32rem;
   .toolbar-inner {
@@ -799,6 +801,9 @@ img {
   left: 0;
   right: 0;
   z-index: 9;
+  input{
+    display: none;
+  }
 }
 
 .fixed-tab-bar {
@@ -833,13 +838,17 @@ img {
   .weui_media_box.weui_media_appmsg {
     padding: $space-sm;
     .weui_media_hd {
-      width: 1.2rem;
-      height: .8rem;
-      line-height: .8rem;
+      width: 2.4rem;
+      height: 1.6rem;
+      line-height: 1.6rem;
       @include background-size(cover);
     }
     .weui_media_title {
-      font-size: $fz-normal;
+      font-size: .3rem;
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2;
+      white-space: normal;
     }
     .weui_media_desc {
       padding-top: $space-xs;
@@ -870,9 +879,16 @@ img {
 .modal-list {
   display: none;
   background-color: #fff;
+  max-height: 6rem;
+  overflow: auto;
+  -webkit-overflow-scrolling : touch;
   li {
     padding: $space-sm;
     font-size: $fz-sm;
+    color: #2b2b2b;
+    a{
+      color: #2b2b2b;
+    }
     &.active {
       background: #efefef;
     }
@@ -953,7 +969,24 @@ img {
 
 }
 
-
+.art-control{
+  padding:0 .6rem .3rem;
+  .btn{
+    display: inline-block;
+    background-color: #d8603e;
+    font-size: $fz-larger;
+    font-weight: normal;
+    color: #ffffff;
+    padding: 0.1rem 0.5rem;
+    @include border-radius(3px);
+  }
+  .pull-right{
+    margin-top: .1rem;
+    i{
+      margin-right: .2rem;
+    }
+  }
+}
 
 
 
